@@ -1,0 +1,210 @@
+0 <fundef>
+ 1 <header> 
+  2 <type> nt
+  2 <fun name> test_cond
+  2 <parameter list>
+   3 int n
+ 1 <exp>
+  2 if
+   3 <exp> 
+    4 <fun exp> 
+     5 <
+     5 <exp>
+      6 n
+     5 <exp> 
+      6 0
+  2 then
+   3 <exp> 
+    4 <fun exp> 
+     5 +
+     5 <exp>
+      6 n
+     5 <exp> 
+      6 5
+      6 true
+  2 else
+   3 <exp> 
+    4 <fun exp> 
+     5 *
+     5 <exp> 
+      6 90
+     5 <exp>
+      6 n
+     5 <exp> 
+      6 12
+0 <fundef>
+ 1 <header> 
+  2 <type> int
+  2 <fun name> square
+  2 <parameter list>
+   3 int x
+ 1 <exp> 
+  2 <fun exp> 
+   3 *
+   3 <exp>
+    4 x
+   3 <exp>
+    4 x
+0 <fundef>
+ 1 <header> 
+  2 <type> float
+  2 <fun name> square1
+  2 <parameter list>
+   3 float x
+ 1 <exp> 
+  2 <fun exp> 
+   3 *
+   3 <exp>
+    4 x
+   3 <exp>
+    4 x
+0 <fundef>
+ 1 <header> 
+  2 <type> float
+  2 <fun name> pi
+ 1 <exp> 
+  2 3.14159
+0 <fundef>
+ 1 <header> 
+  2 <type> float
+  2 <fun name> cylinder_volume
+  2 <parameter list>
+   3 float length
+   3 float radius
+ 1 <exp> 
+  2 <fun exp> 
+   3 *
+   3 <exp>
+    4 length
+   3 <exp> 
+    4 <fun exp> 
+     5 *
+     5 <exp> 
+      6 <fun exp> 
+       7 pi
+     5 <exp> 
+      6 <fun exp> 
+       7 square
+       7 <exp>
+        8 radius
+0 <fundef>
+ 1 <header> 
+  2 <type> int
+  2 <fun name> fact
+  2 <parameter list>
+   3 int n
+ 1 <exp>
+  2 if
+   3 <exp> 
+    4 <fun exp> 
+     5 =
+     5 <exp>
+      6 n
+     5 <exp> 
+      6 0
+  2 then
+   3 <exp> 
+    4 1
+  2 else
+   3 <exp> 
+    4 <fun exp> 
+     5 *
+     5 <exp>
+      6 n
+     5 <exp> 
+      6 <fun exp> 
+       7 fact
+       7 <exp> 
+        8 <fun exp> 
+         9 -
+         9 <exp>
+          10 n
+         9 <exp> 
+          10 1
+0 <fundef>
+ 1 <header> 
+  2 <type> int
+  2 <fun name> test
+  2 <parameter list>
+   3 int x
+   3 int y
+ 1 <exp>
+  2 if
+   3 <exp> 
+    4 <fun exp> 
+     5 >
+     5 <exp>
+      6 x
+     5 <exp> 
+      6 -987
+  2 then
+   3 <exp> 
+    4 6453
+  2 else
+   3 <exp> 
+    4 -1540
+0 <fun def>
+ 1 <header> 
+  2 <type> boolean
+  2 <fun name> test_cond
+  2 <parameter list>
+   3 int n
+ 1 <exp>
+  2 if
+   3 <exp> 
+    4 <fun exp> 
+     5 >=
+     5 <exp>
+      6 n
+     5 <exp> 
+      6 0
+  2 then
+   3 <exp> 
+    4 <fun exp> 
+     5 and
+      6 false
+     5 <exp> 
+      6 <fun exp> 
+       7 <=
+       7 <exp>
+        8 n
+       7 <exp> 
+        8 100
+     5 <exp> 
+      6 <fun exp> 
+       7 not
+        8 true
+  2 else
+   3 <exp> 
+    4 <fun exp> 
+     5 or
+     5 <exp> 
+      6 7.5
+     5 <exp> 
+      6 <fun exp> 
+       7 =
+       7 <exp>
+        8 n
+       7 <exp> 
+        8 65
+
+
+Display return types of functions:
+
+{test_cond=nt, square=int, square1=float, pi=float, cylinder_volume=float, fact=int, test=int, test_cond=boolean}
+
+Display parameter types of functions:
+
+{test_cond={n=int}, square={x=int}, square1={x=float}, cylinder_volume={length=float, radius=float}, fact={n=int}, test={x=int, y=int}, test_cond={n=int}}
+
+Display parameter types of functions by position:
+
+{test_cond{1=int}, square{1=int}, square1{1=float}, cylinder_volume{1=float, 2=float}, fact{1=int}, test{1=int, 2=int}, test_cond{1=int}}
+
+Type Error: incompatible types found in expression
+Type Error: incompatible types found in expression
+Type Error: some arguments of + operator have incompatible types
+Type Error: incompatible return type and body expression type in function: test_cond
+Type Error: incompatible types found in expression
+Type Error: some arguments of or operator have incompatible types
+Type Error: incompatible return type and body expression type in function: test_cond
